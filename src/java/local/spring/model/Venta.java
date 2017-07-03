@@ -1,5 +1,5 @@
 package local.spring.model;
-// Generated 03/07/2017 12:59:29 AM by Hibernate Tools 4.3.1
+// Generated 03/07/2017 01:54:50 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,6 +16,7 @@ public class Venta  implements java.io.Serializable {
      private Date fecha;
      private Integer factura;
      private String lugar;
+     private Detalle detalle;
 
     public Venta() {
     }
@@ -25,12 +26,13 @@ public class Venta  implements java.io.Serializable {
         this.producto = producto;
         this.usuario = usuario;
     }
-    public Venta(Producto producto, Usuario usuario, Date fecha, Integer factura, String lugar) {
+    public Venta(Producto producto, Usuario usuario, Date fecha, Integer factura, String lugar, Detalle detalle) {
        this.producto = producto;
        this.usuario = usuario;
        this.fecha = fecha;
        this.factura = factura;
        this.lugar = lugar;
+       this.detalle = detalle;
     }
    
     public int getIdventa() {
@@ -74,6 +76,13 @@ public class Venta  implements java.io.Serializable {
     
     public void setLugar(String lugar) {
         this.lugar = lugar;
+    }
+    public Detalle getDetalle() {
+        return this.detalle;
+    }
+    
+    public void setDetalle(Detalle detalle) {
+        this.detalle = detalle;
     }
 
 

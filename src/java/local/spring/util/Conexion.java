@@ -37,7 +37,7 @@ public class Conexion {
             Configuration configuration = new Configuration();
             configuration.configure("/hibernate.cfg.xml");
             System.out.println("Hibernate Annotation Configuration loaded");
-            ServiceRegistry serviceRegistry = (ServiceRegistry) new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+            ServiceRegistry serviceRegistry =  (ServiceRegistry) new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             System.out.println("Hibernate Annotation serviceRegistry created");
             sessionFactory = configuration.buildSessionFactory((org.hibernate.service.ServiceRegistry) serviceRegistry);
             return sessionFactory;

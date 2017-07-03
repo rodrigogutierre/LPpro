@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/07/2017 01:54:51 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="local.spring.model.Detalle" table="detalle" schema="public" optimistic-lock="version">
+        <id name="iddetalle" type="int">
+            <column name="iddetalle" />
+            <generator class="foreign">
+                <param name="property">venta</param>
+            </generator>
+        </id>
+        <one-to-one name="venta" class="local.spring.model.Venta" constrained="true"></one-to-one>
+        <property name="cantidad" type="int">
+            <column name="cantidad" not-null="true" />
+        </property>
+        <property name="precioFinal" type="int">
+            <column name="precio_final" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

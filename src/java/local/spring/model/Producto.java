@@ -1,5 +1,5 @@
 package local.spring.model;
-// Generated 03/07/2017 12:59:29 AM by Hibernate Tools 4.3.1
+// Generated 03/07/2017 01:54:50 AM by Hibernate Tools 4.3.1
 
 
 

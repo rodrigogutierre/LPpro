@@ -10,9 +10,10 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="local/spring/model/Persona.hbm.xml"/>
+    <mapping resource="local/spring/model/Detalle.hbm.xml"/>
+    <mapping resource="local/spring/model/Rol.hbm.xml"/>
     <mapping resource="local/spring/model/Producto.hbm.xml"/>
     <mapping resource="local/spring/model/Usuario.hbm.xml"/>
-    <mapping resource="local/spring/model/Rol.hbm.xml"/>
     <mapping resource="local/spring/model/Venta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -15,17 +15,18 @@ import local.spring.model.Usuario;
 import local.spring.util.Conexion;
 import org.hibernate.Session;
 
+
 /**
  *
  * @author rodrigo gutierrez
  */
 public class UsuarioDAO implements  Operacion<Usuario>{
-    private PreparedStatement ps;
-    private ResultSet rs;
-    private Connection cx;
-    
-  
-    private final static String SQL_VALIDA = "SELECT * FROM usuario WHERE user=? AND clave=?";
+//    private PreparedStatement ps;
+//    private ResultSet rs;
+//    private Connection cx;
+//    
+//  
+//    private final static String SQL_VALIDA = "SELECT * FROM usuario WHERE user=? AND clave=?";
 
     @Override
     public int create(Usuario d) {
@@ -104,20 +105,21 @@ List<Usuario> lista = new ArrayList<>();
     public List<Usuario> buscar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public int validar(String user, String clave){
-        int op=0;
-        try {
-            Session session = Conexion.getSessionFactory().openSession();
-            ps = cx.prepareStatement(SQL_VALIDA);
-            ps.setString(1, user);
-            ps.setString(2, clave);
-            rs = ps.executeQuery();
-            while(rs.next()){
-                op = 1;
-            }
-        } catch (Exception e) {
-            System.out.println("Error: "+e);
-        }
-        return op;
+    public int validar(String user, String clave){throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+//        int op=0;
+//        try {
+//            Session session = Conexion.getSessionFactory().openSession();
+//            ps = cx.prepareStatement(SQL_VALIDA);
+//            ps.setString(1, user);
+//            ps.setString(2, clave);
+//            rs = ps.executeQuery();
+//            while(rs.next()){
+//                op = 1;
+//            }
+//        } catch (Exception e) {
+//            System.out.println("Error: "+e);
+//        }
+//        return op;
+//    }
 }

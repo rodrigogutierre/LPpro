@@ -39,6 +39,8 @@ import local.spring.model.Usuario;
         Usuario u = new Usuario();
         u.setUser("rodrigo");
         u.setPass("hola123");
+        u.setEstado(0);
+        u.setContador(1);
         if(ud.create(u)==1){
             System.out.println("si");
         }else{

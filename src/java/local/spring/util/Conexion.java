@@ -5,11 +5,11 @@
  */
 package local.spring.util;
 
-import javax.imageio.spi.ServiceRegistry;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
@@ -37,9 +37,9 @@ public class Conexion {
             Configuration configuration = new Configuration();
             configuration.configure("/hibernate.cfg.xml");
             System.out.println("Hibernate Annotation Configuration loaded");
-            ServiceRegistry serviceRegistry =  (ServiceRegistry) new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             System.out.println("Hibernate Annotation serviceRegistry created");
-            sessionFactory = configuration.buildSessionFactory((org.hibernate.service.ServiceRegistry) serviceRegistry);
+            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
             return sessionFactory;
         } catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed  

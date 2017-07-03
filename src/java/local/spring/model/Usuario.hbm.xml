@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/07/2017 12:59:31 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="local.spring.model.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <id name="idusuario" type="int">
+            <column name="idusuario" />
+            <generator class="foreign">
+                <param name="property">persona</param>
+            </generator>
+        </id>
+        <one-to-one name="persona" class="local.spring.model.Persona" constrained="true"></one-to-one>
+        <one-to-one name="rol" class="local.spring.model.Rol" constrained="true"></one-to-one>
+        <property name="user" type="string">
+            <column name="user" length="45" not-null="true" />
+        </property>
+        <property name="pass" type="string">
+            <column name="pass" length="20" not-null="true" />
+        </property>
+        <property name="estado" type="java.lang.Integer">
+            <column name="estado" />
+        </property>
+        <property name="contador" type="java.lang.Integer">
+            <column name="contador" />
+        </property>
+        <one-to-one name="venta" class="local.spring.model.Venta"></one-to-one>
+    </class>
+</hibernate-mapping>

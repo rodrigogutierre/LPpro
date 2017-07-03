@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03/07/2017 12:59:31 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="local.spring.model.Rol" table="rol" schema="public" optimistic-lock="version">
+        <id name="idrol" type="int">
+            <column name="idrol" />
+            <generator class="assigned" />
+        </id>
+        <property name="rol" type="char">
+            <column name="rol" length="1" not-null="true" />
+        </property>
+        <one-to-one name="usuario" class="local.spring.model.Usuario"></one-to-one>
+    </class>
+</hibernate-mapping>
